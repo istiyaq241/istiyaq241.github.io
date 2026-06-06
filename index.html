@@ -35,18 +35,9 @@
     overflow-x: hidden;
   }
 
-  /* NAV */
+  /* NAV — hidden when embedded in Google Sites */
   nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.2rem 4rem;
-    background: rgba(250,248,243,0.92);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(184,146,74,0.15);
+    display: none;
   }
   .nav-logo {
     font-family: var(--serif);
@@ -75,7 +66,6 @@
     grid-template-columns: 1fr 1fr;
     align-items: center;
     padding: 0 4rem;
-    padding-top: 80px;
     position: relative;
     overflow: hidden;
   }
