@@ -9,8 +9,8 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
     --gold: #b8924a; --gold-light: #d4aa6a; --gold-pale: #f5edd8;
-    --navy: #0e1a2b; --navy-mid: #1a2f4a; --navy-soft: #243a55;
-    --cream: #faf8f3; --cream-dark: #f0ebe0;
+    --navy: #0e1a2b; --navy-soft: #243a55;
+    --cream: #faf8f3;
     --text-dark: #1a1208; --text-mid: #4a3f2f; --text-light: #7a6e5f;
     --serif: 'Cormorant Garamond', Georgia, serif;
     --sans: 'DM Sans', sans-serif;
@@ -19,19 +19,19 @@
   body { font-family: var(--sans); background: var(--cream); color: var(--text-dark); overflow-x: hidden; }
 
   .hero {
-    min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    padding: 3rem 4rem;
+    padding: 5rem 4rem 5rem;
     position: relative;
     overflow: hidden;
+    background: var(--cream);
   }
   .hero::before {
     content: '';
     position: absolute;
-    right: -5%; top: 10%;
-    width: 55%; height: 80%;
+    right: -5%; top: 5%;
+    width: 55%; height: 90%;
     background: var(--navy);
     border-radius: 2px;
     z-index: 0;
@@ -73,12 +73,13 @@
     border-color: var(--navy); margin-left: 1rem;
   }
   .hero-cta-outline:hover { background: var(--navy); color: var(--gold-pale); }
+
   .hero-visual {
     position: relative; z-index: 1;
     display: flex; justify-content: center; align-items: center;
     animation: fadeUp 0.8s 0.2s ease both;
   }
-  .hero-photo-frame { width: 320px; height: 380px; position: relative; }
+  .hero-photo-frame { width: 300px; height: 360px; position: relative; }
   .hero-photo-frame::before {
     content: ''; position: absolute;
     top: -16px; left: -16px; right: 16px; bottom: 16px;
@@ -99,7 +100,9 @@
     font-size: 0.75rem; color: rgba(255,255,255,0.4);
     letter-spacing: 0.1em; text-transform: uppercase;
   }
+
   @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+
   @media (max-width: 900px) {
     .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem; text-align: center; }
     .hero::before { display: none; }
