@@ -9,7 +9,7 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
     --gold: #b8924a; --gold-pale: #f5edd8;
-    --navy: #0e1a2b; --cream: #faf8f3;
+    --navy: #0e1a2b; --navy-soft: #243a55; --cream: #faf8f3;
     --text-mid: #4a3f2f; --text-light: #7a6e5f;
     --serif: 'Cormorant Garamond', Georgia, serif;
     --sans: 'DM Sans', sans-serif;
@@ -21,22 +21,45 @@
   .divider { width: 40px; height: 1.5px; background: var(--gold); margin-bottom: 1.2rem; }
   .section-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 300; color: var(--navy); line-height: 1.1; margin-bottom: 2rem; }
   .section-title em { font-style: italic; }
-  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-  .project-card { background: white; border: 1px solid rgba(14,26,43,0.1); padding: 1.8rem; transition: border-color 0.25s, transform 0.25s; position: relative; overflow: hidden; }
-  .project-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+
+  /* PROJECT CARD */
+  .project-card { background: white; border: 1px solid rgba(14,26,43,0.1); margin-bottom: 2rem; position: relative; overflow: hidden; transition: border-color 0.25s, transform 0.25s; }
   .project-card:hover { transform: translateY(-3px); border-color: rgba(184,146,74,0.4); }
+  .project-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
   .project-card:hover::after { transform: scaleX(1); }
-  .project-number { font-family: var(--serif); font-size: 2.5rem; font-weight: 300; color: rgba(184,146,74,0.15); line-height: 1; margin-bottom: 0.4rem; }
-  .project-name { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; color: var(--navy); margin-bottom: 0.6rem; }
-  .project-desc { font-size: 0.86rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 1rem; }
-  .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+
+  /* PROJECT MEDIA STRIP */
+  .project-media { display: grid; grid-template-columns: repeat(3, 1fr); height: 140px; }
+  .media-slot { background: var(--navy-soft); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.3rem; border-right: 1px solid rgba(255,255,255,0.05); overflow: hidden; }
+  .media-slot:last-child { border-right: none; }
+  .media-slot img { width: 100%; height: 100%; object-fit: cover; }
+  .media-slot-icon { font-size: 1.4rem; }
+  .media-slot-label { font-size: 0.58rem; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.08em; }
+
+  .project-body { padding: 1.5rem; }
+  .project-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 0.7rem; flex-wrap: wrap; }
+  .project-number { font-family: var(--serif); font-size: 2.5rem; font-weight: 300; color: rgba(184,146,74,0.15); line-height: 1; }
+  .project-name { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--navy); }
+  .project-status { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.7rem; border: 1px solid; border-radius: 20px; white-space: nowrap; }
+  .status-live { color: #2d7a3a; border-color: #2d7a3a; background: rgba(45,122,58,0.06); }
+  .status-desktop { color: var(--gold); border-color: var(--gold); background: rgba(184,146,74,0.06); }
+  .status-active { color: #1a5fa8; border-color: #1a5fa8; background: rgba(26,95,168,0.06); }
+  .project-desc { font-size: 0.88rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 1rem; }
+  .project-tech { margin-bottom: 1rem; }
+  .tech-label { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.4rem; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
   .tag { font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.6rem; background: var(--gold-pale); color: var(--text-mid); border: 1px solid rgba(184,146,74,0.3); }
   .project-link { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,146,74,0.3); padding-bottom: 1px; transition: color 0.2s; }
   .project-link:hover { color: var(--navy); }
-  .todo-note { background: rgba(184,146,74,0.08); border: 1px dashed rgba(184,146,74,0.4); padding: 0.8rem 1.2rem; font-size: 0.8rem; color: var(--text-light); font-style: italic; margin-top: 1.5rem; border-radius: 2px; }
+
+  .todo-note { background: rgba(184,146,74,0.08); border: 1px dashed rgba(184,146,74,0.4); padding: 0.8rem 1.2rem; font-size: 0.8rem; color: var(--text-light); font-style: italic; margin-top: 0.5rem; border-radius: 2px; }
+
   @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-  .projects-grid { animation: fadeUp 0.5s ease both; }
-  @media (max-width: 600px) { section { padding: 2rem 4%; } .projects-grid { grid-template-columns: 1fr; } }
+  .project-card { animation: fadeUp 0.5s ease both; }
+  .project-card:nth-child(2) { animation-delay: 0.1s; }
+  .project-card:nth-child(3) { animation-delay: 0.2s; }
+
+  @media (max-width: 600px) { section { padding: 2rem 4%; } .project-media { grid-template-columns: 1fr 1fr; height: 110px; } .project-media .media-slot:last-child { display: none; } }
 </style>
 </head>
 <body>
@@ -44,30 +67,111 @@
   <p class="section-eyebrow">Work</p>
   <div class="divider"></div>
   <h2 class="section-title">Selected<br><em>Projects</em></h2>
-  <div class="projects-grid">
-    <div class="project-card">
-      <div class="project-number">01</div>
-      <h3 class="project-name">MediAid</h3>
-      <p class="project-desc">A medicine donation platform where individuals and organizations can donate unused or unexpired medicines to those in need — reducing healthcare costs and improving medication access.</p>
-      <div class="project-tags"><span class="tag">Web App</span><span class="tag">Healthcare</span><span class="tag">Node.js</span></div>
+
+  <!-- PROJECT 1: MediAid -->
+  <div class="project-card">
+    <div class="project-media">
+      <div class="media-slot">
+        <!-- Replace with: <img src="mediaid-1.jpg" alt="MediAid screenshot"> -->
+        <span class="media-slot-icon">📸</span><span class="media-slot-label">Add screenshot</span>
+      </div>
+      <div class="media-slot">
+        <span class="media-slot-icon">📸</span><span class="media-slot-label">Add screenshot</span>
+      </div>
+      <div class="media-slot">
+        <span class="media-slot-icon">🎬</span><span class="media-slot-label">Add demo video</span>
+      </div>
+    </div>
+    <div class="project-body">
+      <div class="project-header">
+        <div>
+          <div class="project-number">01</div>
+          <div class="project-name">MediAid</div>
+        </div>
+        <span class="project-status status-desktop">Desktop App</span>
+      </div>
+      <p class="project-desc">
+        A JavaFX-based desktop application designed to provide emergency treatment guidance in disaster-prone environments where medical access is delayed. Built with object-oriented principles, JavaFX UI, and Git-based version control — it serves as a first-aid companion when professional help isn't immediately available.
+      </p>
+      <div class="project-tech">
+        <p class="tech-label">Tech Stack</p>
+        <div class="project-tags">
+          <span class="tag">Java</span><span class="tag">JavaFX</span><span class="tag">JDK 21</span><span class="tag">IntelliJ</span><span class="tag">OOP</span>
+        </div>
+      </div>
       <a href="https://github.com/istiyaq241/MediAid" class="project-link" target="_blank">View on GitHub →</a>
     </div>
-    <div class="project-card">
-      <div class="project-number">02</div>
-      <h3 class="project-name">DISS-Sync</h3>
-      <p class="project-desc">A synchronization tool designed for DIU's information systems — keeping data consistent and up-to-date across institutional databases and services.</p>
-      <div class="project-tags"><span class="tag">Sync</span><span class="tag">Database</span><span class="tag">Backend</span></div>
-      <a href="https://github.com/istiyaq241/DISS-Sync" class="project-link" target="_blank">View on GitHub →</a>
+  </div>
+
+  <!-- PROJECT 2: DATS -->
+  <div class="project-card">
+    <div class="project-media">
+      <div class="media-slot">
+        <span class="media-slot-icon">📸</span><span class="media-slot-label">Add screenshot</span>
+      </div>
+      <div class="media-slot">
+        <span class="media-slot-icon">📸</span><span class="media-slot-label">Add screenshot</span>
+      </div>
+      <div class="media-slot">
+        <span class="media-slot-icon">🎬</span><span class="media-slot-label">Add demo video</span>
+      </div>
     </div>
-    <div class="project-card">
-      <div class="project-number">03</div>
-      <h3 class="project-name">DATS</h3>
-      <p class="project-desc">A data and task management system built to streamline academic or organizational workflows — organizing information efficiently with a clean, functional interface.</p>
-      <div class="project-tags"><span class="tag">Data Management</span><span class="tag">System Design</span></div>
+    <div class="project-body">
+      <div class="project-header">
+        <div>
+          <div class="project-number">02</div>
+          <div class="project-name">DATS</div>
+        </div>
+        <span class="project-status status-live">Live · Deployed</span>
+      </div>
+      <p class="project-desc">
+        Daffodil Smart Transport System — a dynamic bus scheduling and fleet management platform built to replace manual Excel sheets. Features a role-based system: an admin "Mission Control" panel with conflict detection and smart dropdowns, and a student "Live Board" that auto-refreshes every 60 seconds showing real-time trip status. Migrated from WordPress to a custom lightweight PHP app and deployed live on InfinityFree.
+      </p>
+      <div class="project-tech">
+        <p class="tech-label">Tech Stack</p>
+        <div class="project-tags">
+          <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">HTML/CSS</span><span class="tag">JavaScript</span><span class="tag">phpMyAdmin</span>
+        </div>
+      </div>
       <a href="https://github.com/istiyaq241/DATS" class="project-link" target="_blank">View on GitHub →</a>
     </div>
   </div>
-  <div class="todo-note">📌 Images and demo videos for each project will be added in the next update.</div>
+
+  <!-- PROJECT 3: DISS-Sync -->
+  <div class="project-card">
+    <div class="project-media">
+      <div class="media-slot">
+        <span class="media-slot-icon">📸</span><span class="media-slot-label">Add screenshot</span>
+      </div>
+      <div class="media-slot">
+        <span class="media-slot-icon">📸</span><span class="media-slot-label">Add screenshot</span>
+      </div>
+      <div class="media-slot">
+        <span class="media-slot-icon">🎬</span><span class="media-slot-label">Add demo video</span>
+      </div>
+    </div>
+    <div class="project-body">
+      <div class="project-header">
+        <div>
+          <div class="project-number">03</div>
+          <div class="project-name">DISS-Sync</div>
+        </div>
+        <span class="project-status status-active">Active Development</span>
+      </div>
+      <p class="project-desc">
+        A teacher management system built for DISS (Daffodil Institute of Social Science). Handles the full workflow of teaching staff — including routine building, class editing, attendance tokens, notes, check-in/check-out tracking, and scheduling. Designed to streamline administrative tasks and reduce paperwork for educators at the institute.
+      </p>
+      <div class="project-tech">
+        <p class="tech-label">Tech Stack</p>
+        <div class="project-tags">
+          <span class="tag">Web App</span><span class="tag">Management System</span><span class="tag">Scheduling</span>
+        </div>
+      </div>
+      <a href="https://github.com/istiyaq241/DISS-Sync" class="project-link" target="_blank">View on GitHub →</a>
+      <div class="todo-note">📌 Screenshots and demo videos coming soon — replace the placeholder slots above with your actual images.</div>
+    </div>
+  </div>
+
 </section>
 </body>
 </html>

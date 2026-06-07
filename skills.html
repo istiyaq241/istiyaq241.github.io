@@ -6,58 +6,166 @@
 <title>Skills — Istiyaq Ahmed Jihad</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --gold: #b8924a; --navy: #0e1a2b;
-  --serif: 'Cormorant Garamond', Georgia, serif;
-  --sans: 'DM Sans', sans-serif;
-}
-html, body { margin: 0; padding: 0; width: 100%; }
-body { font-family: var(--sans); background: var(--navy); color: white; }
-
-section { padding: 2rem 4%; }
-
-.section-eyebrow { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(212,170,106,0.7); margin-bottom: 0.5rem; }
-.divider { width: 40px; height: 1.5px; background: var(--gold); margin-bottom: 1.2rem; }
-.section-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 300; color: #f5edd8; line-height: 1.1; margin-bottom: 2rem; }
-.section-title em { font-style: italic; }
-
-/* ── Mobile-first: always 2 columns, safe for narrow iframe containers ── */
-.skills-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.2rem;
-}
-
-/* ── Wider screens: let it breathe with auto-fit ── */
-@media (min-width: 560px) {
-  section { padding: 3rem 5%; }
-  .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 1.8rem;
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --gold: #b8924a; --gold-pale: #f5edd8;
+    --navy: #0e1a2b; --cream: #faf8f3; --cream-dark: #f0ebe0;
+    --text-mid: #4a3f2f; --text-light: #7a6e5f;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
   }
-}
+  html, body { margin: 0; padding: 0; width: 100%; }
+  body { font-family: var(--sans); background: var(--navy); color: white; }
+  section { padding: 3rem 5%; }
+  .section-eyebrow { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(212,170,106,0.7); margin-bottom: 0.5rem; }
+  .career .section-eyebrow { color: var(--gold); }
+  .divider { width: 40px; height: 1.5px; background: var(--gold); margin-bottom: 1.2rem; }
+  .section-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 300; color: #f5edd8; line-height: 1.1; margin-bottom: 2rem; }
+  .career .section-title { color: var(--navy); }
+  .section-title em { font-style: italic; }
 
-.skill-group-title { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; padding-bottom: 0.4rem; border-bottom: 1px solid rgba(184,146,74,0.25); }
-.skill-list { list-style: none; }
-.skill-list li { font-size: 0.86rem; color: rgba(255,255,255,0.65); padding: 0.35rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; gap: 0.5rem; }
-.skill-list li::before { content: ''; width: 4px; height: 4px; background: var(--gold); flex-shrink: 0; transform: rotate(45deg); }
+  /* SKILLS GRID */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.8rem; }
+  .skill-group-title { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; padding-bottom: 0.4rem; border-bottom: 1px solid rgba(184,146,74,0.25); }
+  .skill-list { list-style: none; }
+  .skill-list li { font-size: 0.86rem; color: rgba(255,255,255,0.65); padding: 0.35rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; gap: 0.5rem; }
+  .skill-list li::before { content: ''; width: 4px; height: 4px; background: var(--gold); flex-shrink: 0; transform: rotate(45deg); }
 
-@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-.skills-grid { animation: fadeUp 0.5s ease both; }
+  /* CAREER PLAN */
+  .career { background: var(--cream-dark); }
+  .career-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .career-intro { font-size: 0.92rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 1.5rem; }
+  .timeline-v { position: relative; }
+  .timeline-v::before { content: ''; position: absolute; left: 10px; top: 4px; bottom: 0; width: 1px; background: rgba(184,146,74,0.3); }
+  .t-item { display: flex; gap: 1.2rem; padding-bottom: 1.5rem; position: relative; }
+  .t-dot { width: 20px; height: 20px; border: 1.5px solid var(--gold); background: white; transform: rotate(45deg); flex-shrink: 0; margin-top: 2px; position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; }
+  .t-dot-inner { width: 6px; height: 6px; background: var(--gold); transform: rotate(0); }
+  .t-content {}
+  .t-phase { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.2rem; }
+  .t-title { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--navy); margin-bottom: 0.3rem; }
+  .t-desc { font-size: 0.84rem; color: var(--text-mid); line-height: 1.6; }
+
+  /* INTEREST BADGES */
+  .interest-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
+  .badge { padding: 0.4rem 1rem; border: 1px solid rgba(184,146,74,0.4); background: rgba(184,146,74,0.06); font-size: 0.78rem; color: var(--text-mid); letter-spacing: 0.05em; }
+
+  @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+  .skills-grid, .career-grid { animation: fadeUp 0.5s ease both; }
+  @media (max-width: 768px) { .career-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 480px) { section { padding: 2rem 4%; } .skills-grid { grid-template-columns: 1fr 1fr; gap: 1.2rem; } }
 </style>
 </head>
 <body>
+
+<!-- SKILLS -->
 <section>
   <p class="section-eyebrow">Capabilities</p>
   <div class="divider"></div>
   <h2 class="section-title">Skills &<br><em>Tools</em></h2>
   <div class="skills-grid">
-    <div><p class="skill-group-title">Technical</p><ul class="skill-list"><li>Programming (CSE core)</li><li>Web Development</li><li>Database Management</li><li>System Design</li></ul></div>
-    <div><p class="skill-group-title">IT Tools</p><ul class="skill-list"><li>MS Word</li><li>PowerPoint</li><li>Email &amp; Communication</li><li>GitHub</li></ul></div>
-    <div><p class="skill-group-title">Soft Skills</p><ul class="skill-list"><li>Problem-Solving</li><li>Creative Thinking</li><li>Communication</li><li>Punctuality &amp; Discipline</li></ul></div>
-    <div><p class="skill-group-title">Languages</p><ul class="skill-list"><li>Bengali — Native</li><li>English — Proficient</li></ul></div>
+    <div>
+      <p class="skill-group-title">Programming</p>
+      <ul class="skill-list">
+        <li>Java / JavaFX</li>
+        <li>PHP</li>
+        <li>HTML / CSS</li>
+        <li>JavaScript</li>
+        <li>MySQL</li>
+      </ul>
+    </div>
+    <div>
+      <p class="skill-group-title">Tools & Platforms</p>
+      <ul class="skill-list">
+        <li>IntelliJ IDEA</li>
+        <li>VS Code</li>
+        <li>GitHub & Git</li>
+        <li>phpMyAdmin</li>
+        <li>XAMPP</li>
+      </ul>
+    </div>
+    <div>
+      <p class="skill-group-title">IT & Office</p>
+      <ul class="skill-list">
+        <li>MS Word</li>
+        <li>PowerPoint</li>
+        <li>Email & Communication</li>
+        <li>InfinityFree Hosting</li>
+      </ul>
+    </div>
+    <div>
+      <p class="skill-group-title">Soft Skills</p>
+      <ul class="skill-list">
+        <li>Problem-Solving</li>
+        <li>Creative Thinking</li>
+        <li>Teaching & Mentoring</li>
+        <li>Communication</li>
+        <li>Punctuality & Discipline</li>
+      </ul>
+    </div>
+    <div>
+      <p class="skill-group-title">Languages</p>
+      <ul class="skill-list">
+        <li>Bengali — Native</li>
+        <li>English — Proficient</li>
+      </ul>
+    </div>
   </div>
 </section>
+
+<!-- CAREER PLAN -->
+<section class="career">
+  <p class="section-eyebrow">Vision</p>
+  <div class="divider"></div>
+  <h2 class="section-title">Career<br><em>Roadmap</em></h2>
+  <div class="career-grid">
+    <div>
+      <p class="career-intro">
+        I'm currently building a strong foundation in web and desktop development while teaching at DISS. My long-term passion is Artificial Intelligence and Machine Learning — I want to combine practical software engineering with intelligent systems to solve meaningful problems.
+      </p>
+      <div class="interest-badges">
+        <span class="badge">Artificial Intelligence</span>
+        <span class="badge">Machine Learning</span>
+        <span class="badge">Web Development</span>
+        <span class="badge">Desktop Apps</span>
+        <span class="badge">EdTech</span>
+      </div>
+    </div>
+    <div class="timeline-v">
+      <div class="t-item">
+        <div class="t-dot"><div class="t-dot-inner"></div></div>
+        <div class="t-content">
+          <p class="t-phase">Now · 2025–2026</p>
+          <p class="t-title">Full-Stack Developer & Educator</p>
+          <p class="t-desc">Building real-world PHP/Java applications, teaching at DISS, and completing my CSE degree at DIU.</p>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-dot"><div class="t-dot-inner"></div></div>
+        <div class="t-content">
+          <p class="t-phase">Near Term · 2026–2027</p>
+          <p class="t-title">Junior Software Engineer</p>
+          <p class="t-desc">Pursuing internships and entry-level roles in software development — web, mobile, or enterprise applications.</p>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-dot"><div class="t-dot-inner"></div></div>
+        <div class="t-content">
+          <p class="t-phase">Mid Term · 2027–2029</p>
+          <p class="t-title">Transition into AI & ML</p>
+          <p class="t-desc">Deep-diving into machine learning, data science, and AI engineering. Building intelligent systems on top of software foundations.</p>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-dot"><div class="t-dot-inner"></div></div>
+        <div class="t-content">
+          <p class="t-phase">Long Term · 2030+</p>
+          <p class="t-title">AI Engineer / ML Specialist</p>
+          <p class="t-desc">Leading AI-driven projects — potentially in EdTech, healthcare, or smart systems — making technology more human.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 </body>
 </html>

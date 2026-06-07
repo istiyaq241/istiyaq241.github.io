@@ -8,7 +8,8 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --gold: #b8924a; --navy: #0e1a2b; --cream-dark: #f0ebe0;
+    --gold: #b8924a; --gold-pale: #f5edd8;
+    --navy: #0e1a2b; --navy-soft: #243a55; --cream-dark: #f0ebe0;
     --text-mid: #4a3f2f; --text-light: #7a6e5f;
     --serif: 'Cormorant Garamond', Georgia, serif;
     --sans: 'DM Sans', sans-serif;
@@ -20,8 +21,23 @@
   .divider { width: 40px; height: 1.5px; background: var(--gold); margin-bottom: 1.2rem; }
   .section-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 300; color: var(--navy); line-height: 1.1; margin-bottom: 2rem; }
   .section-title em { font-style: italic; }
-  .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-  .contact-intro { font-size: 0.92rem; color: var(--text-mid); line-height: 1.8; }
+
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+
+  /* PHOTO SLOT */
+  .contact-photo { margin-bottom: 1.5rem; }
+  .contact-photo-frame { position: relative; width: 100%; max-width: 280px; }
+  .contact-photo-frame::before { content: ''; position: absolute; top: -10px; left: -10px; right: 10px; bottom: 10px; border: 1.5px solid var(--gold); z-index: 0; }
+  .contact-photo-frame img { width: 100%; height: 200px; object-fit: cover; display: block; position: relative; z-index: 1; }
+  .photo-placeholder { width: 100%; height: 200px; background: var(--navy-soft); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.4rem; position: relative; z-index: 1; }
+  .photo-placeholder span { font-size: 1.8rem; }
+  .photo-placeholder p { font-size: 0.62rem; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.08em; text-align: center; padding: 0 1rem; }
+
+  .contact-intro { font-size: 0.92rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 1rem; }
+  .availability { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; color: #2d7a3a; background: rgba(45,122,58,0.08); border: 1px solid rgba(45,122,58,0.25); padding: 0.4rem 1rem; margin-top: 0.5rem; }
+  .availability::before { content: ''; width: 6px; height: 6px; background: #2d7a3a; border-radius: 50%; animation: pulse 1.5s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
   .contact-list { list-style: none; }
   .contact-list li { display: flex; align-items: center; gap: 0.9rem; padding: 0.8rem 0; border-bottom: 1px solid rgba(184,146,74,0.15); }
   .contact-list li:first-child { border-top: 1px solid rgba(184,146,74,0.15); }
@@ -31,12 +47,14 @@
   .contact-value { font-size: 0.87rem; color: var(--navy); word-break: break-word; }
   .contact-value a { color: var(--navy); text-decoration: none; }
   .contact-value a:hover { color: var(--gold); }
+
   footer { background: var(--navy); padding: 1.5rem 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
   footer p { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
   .footer-brand { font-family: var(--serif); font-size: 1rem; color: var(--gold); }
+
   @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-  .contact-inner { animation: fadeUp 0.5s ease both; }
-  @media (max-width: 768px) { .contact-inner { grid-template-columns: 1fr; gap: 2rem; } section { padding: 2.5rem 5%; } }
+  .contact-grid { animation: fadeUp 0.5s ease both; }
+  @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 2rem; } section { padding: 2.5rem 5%; } }
   @media (max-width: 480px) { section { padding: 2rem 4%; } footer { padding: 1.2rem 4%; flex-direction: column; text-align: center; } }
 </style>
 </head>
@@ -45,21 +63,52 @@
   <p class="section-eyebrow">Let's Connect</p>
   <div class="divider"></div>
   <h2 class="section-title">Get In<br><em>Touch</em></h2>
-  <div class="contact-inner">
-    <div><p class="contact-intro">Whether you'd like to collaborate on a project, discuss opportunities, or simply connect — I'd love to hear from you. I'm currently open to internships and collaborative academic projects.</p></div>
+  <div class="contact-grid">
+    <div>
+      <!-- PHOTO SLOT -->
+      <div class="contact-photo">
+        <div class="contact-photo-frame">
+          <!-- Replace with: <img src="your-photo.jpg" alt="Istiyaq Ahmed Jihad"> -->
+          <div class="photo-placeholder">
+            <span>📷</span>
+            <p>Add a professional photo here</p>
+          </div>
+        </div>
+      </div>
+      <p class="contact-intro">
+        Whether you'd like to collaborate on a project, discuss opportunities, or simply connect — I'd love to hear from you. I'm currently open to internships, freelance projects, and collaborative academic work.
+      </p>
+      <div class="availability">Open to Opportunities</div>
+    </div>
     <div>
       <ul class="contact-list">
-        <li><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><span class="contact-label">Email</span><span class="contact-value"><a href="mailto:ahmed241-15-020@diu.edu.bd">ahmed241-15-020@diu.edu.bd</a></span></div></li>
-        <li><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .82h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.16a16 16 0 006.29 6.29l1.5-1.34a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><span class="contact-label">Phone</span><span class="contact-value">+88 01681-706512</span></div></li>
-        <li><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></div><div><span class="contact-label">GitHub</span><span class="contact-value"><a href="https://github.com/istiyaq241" target="_blank">github.com/istiyaq241</a></span></div></li>
-        <li><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><span class="contact-label">Location</span><span class="contact-value">60 Feet, Mirpur-2, Dhaka</span></div></li>
+        <li>
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><span class="contact-label">Email</span><span class="contact-value"><a href="mailto:ahmed241-15-020@diu.edu.bd">ahmed241-15-020@diu.edu.bd</a></span></div>
+        </li>
+        <li>
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .82h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.16a16 16 0 006.29 6.29l1.5-1.34a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div><span class="contact-label">Phone</span><span class="contact-value">+88 01681-706512</span></div>
+        </li>
+        <li>
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></div>
+          <div><span class="contact-label">GitHub</span><span class="contact-value"><a href="https://github.com/istiyaq241" target="_blank">github.com/istiyaq241</a></span></div>
+        </li>
+        <li>
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><span class="contact-label">Location</span><span class="contact-value">60 Feet, Mirpur-2, Dhaka</span></div>
+        </li>
+        <li>
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+          <div><span class="contact-label">Institution</span><span class="contact-value">Daffodil International University</span></div>
+        </li>
       </ul>
     </div>
   </div>
 </section>
 <footer>
   <span class="footer-brand">Istiyaq Ahmed Jihad</span>
-  <p>© 2025 · CSE Student · Daffodil International University</p>
+  <p>© 2026 · CSE Student & Developer · Daffodil International University</p>
 </footer>
 </body>
 </html>
