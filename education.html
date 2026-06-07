@@ -15,37 +15,31 @@
   }
   html, body { margin: 0; padding: 0; width: 100%; }
   body { font-family: var(--sans); background: var(--navy); color: white; }
-  .education { padding: 5rem 6rem; }
-  .achievements { padding: 5rem 6rem; background: var(--cream-dark); }
-  .section-eyebrow { font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(212,170,106,0.7); margin-bottom: 0.6rem; }
+  .education { padding: 3rem 5%; }
+  .achievements { padding: 3rem 5%; background: var(--cream-dark); }
+  .section-eyebrow { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(212,170,106,0.7); margin-bottom: 0.5rem; }
   .achievements .section-eyebrow { color: var(--gold); }
-  .divider { width: 48px; height: 1.5px; background: var(--gold); margin-bottom: 1.5rem; }
-  .section-title { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; color: var(--gold-pale); line-height: 1.1; margin-bottom: 3rem; }
+  .divider { width: 40px; height: 1.5px; background: var(--gold); margin-bottom: 1.2rem; }
+  .section-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 300; color: var(--gold-pale); line-height: 1.1; margin-bottom: 2rem; }
   .achievements .section-title { color: var(--navy); }
   .section-title em { font-style: italic; }
-  .edu-timeline { position: relative; max-width: 760px; animation: fadeUp 0.6s ease both; }
+  .edu-timeline { position: relative; }
   .edu-timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 0; width: 1px; background: rgba(184,146,74,0.3); }
-  .edu-item { padding: 0 0 2.5rem 2.5rem; position: relative; }
-  .edu-item::before { content: ''; position: absolute; left: -4px; top: 8px; width: 9px; height: 9px; border: 1.5px solid var(--gold); background: var(--navy); transform: rotate(45deg); }
-  .edu-year { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
-  .edu-degree { font-family: var(--serif); font-size: clamp(1.1rem, 2vw, 1.3rem); font-weight: 400; color: var(--gold-pale); margin-bottom: 0.2rem; }
-  .edu-institution { font-size: clamp(0.8rem, 1.5vw, 0.9rem); color: rgba(255,255,255,0.55); }
-  .edu-detail { font-size: 0.82rem; color: rgba(255,255,255,0.35); margin-top: 0.3rem; }
-  .achiev-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; animation: fadeUp 0.6s ease both; }
-  .achiev-card { background: white; border: 1px solid rgba(184,146,74,0.2); padding: 1.5rem; transition: border-color 0.2s, transform 0.2s; }
-  .achiev-card:hover { border-color: var(--gold); transform: translateY(-3px); }
-  .achiev-icon { font-family: var(--serif); font-size: 1.8rem; color: var(--gold); margin-bottom: 0.6rem; display: block; }
-  .achiev-title { font-weight: 500; font-size: clamp(0.82rem, 1.5vw, 0.9rem); color: var(--navy); margin-bottom: 0.2rem; }
-  .achiev-sub { font-size: 0.78rem; color: #7a6e5f; }
-  @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
-
-  @media (max-width: 900px) { .education, .achievements { padding: 4rem 3rem; } }
-  @media (max-width: 560px) {
-    .education, .achievements { padding: 3rem 1.5rem; }
-    .edu-item { padding: 0 0 2rem 1.8rem; }
-    .achiev-grid { grid-template-columns: 1fr 1fr; }
-  }
-  @media (max-width: 400px) { .achiev-grid { grid-template-columns: 1fr; } }
+  .edu-item { padding: 0 0 2rem 2rem; position: relative; }
+  .edu-item::before { content: ''; position: absolute; left: -4px; top: 8px; width: 8px; height: 8px; border: 1.5px solid var(--gold); background: var(--navy); transform: rotate(45deg); }
+  .edu-year { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
+  .edu-degree { font-family: var(--serif); font-size: clamp(1rem, 2vw, 1.2rem); font-weight: 400; color: var(--gold-pale); margin-bottom: 0.2rem; }
+  .edu-institution { font-size: 0.85rem; color: rgba(255,255,255,0.55); }
+  .edu-detail { font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-top: 0.2rem; }
+  .achiev-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
+  .achiev-card { background: white; border: 1px solid rgba(184,146,74,0.2); padding: 1.2rem; transition: border-color 0.2s, transform 0.2s; }
+  .achiev-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+  .achiev-icon { font-size: 1.5rem; color: var(--gold); margin-bottom: 0.5rem; display: block; }
+  .achiev-title { font-weight: 500; font-size: 0.85rem; color: var(--navy); margin-bottom: 0.2rem; }
+  .achiev-sub { font-size: 0.75rem; color: #7a6e5f; }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+  .edu-timeline, .achiev-grid { animation: fadeUp 0.5s ease both; }
+  @media (max-width: 480px) { .education, .achievements { padding: 2rem 4%; } .achiev-grid { grid-template-columns: 1fr 1fr; } }
 </style>
 </head>
 <body>
