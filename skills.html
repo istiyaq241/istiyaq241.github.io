@@ -24,14 +24,12 @@
   .career .section-title { color: var(--navy); }
   .section-title em { font-style: italic; }
 
-  /* SKILLS GRID */
   .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.8rem; }
   .skill-group-title { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; padding-bottom: 0.4rem; border-bottom: 1px solid rgba(184,146,74,0.25); }
   .skill-list { list-style: none; }
   .skill-list li { font-size: 0.86rem; color: rgba(255,255,255,0.65); padding: 0.35rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; gap: 0.5rem; }
   .skill-list li::before { content: ''; width: 4px; height: 4px; background: var(--gold); flex-shrink: 0; transform: rotate(45deg); }
 
-  /* CAREER PLAN */
   .career { background: var(--cream-dark); }
   .career-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
   .career-intro { font-size: 0.92rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 1.5rem; }
@@ -39,13 +37,11 @@
   .timeline-v::before { content: ''; position: absolute; left: 10px; top: 4px; bottom: 0; width: 1px; background: rgba(184,146,74,0.3); }
   .t-item { display: flex; gap: 1.2rem; padding-bottom: 1.5rem; position: relative; }
   .t-dot { width: 20px; height: 20px; border: 1.5px solid var(--gold); background: white; transform: rotate(45deg); flex-shrink: 0; margin-top: 2px; position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; }
-  .t-dot-inner { width: 6px; height: 6px; background: var(--gold); transform: rotate(0); }
-  .t-content {}
+  .t-dot-inner { width: 6px; height: 6px; background: var(--gold); }
   .t-phase { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.2rem; }
   .t-title { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--navy); margin-bottom: 0.3rem; }
   .t-desc { font-size: 0.84rem; color: var(--text-mid); line-height: 1.6; }
 
-  /* INTEREST BADGES */
   .interest-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
   .badge { padding: 0.4rem 1rem; border: 1px solid rgba(184,146,74,0.4); background: rgba(184,146,74,0.06); font-size: 0.78rem; color: var(--text-mid); letter-spacing: 0.05em; }
 
@@ -57,7 +53,6 @@
 </head>
 <body>
 
-<!-- SKILLS -->
 <section>
   <p class="section-eyebrow">Capabilities</p>
   <div class="divider"></div>
@@ -112,7 +107,6 @@
   </div>
 </section>
 
-<!-- CAREER PLAN -->
 <section class="career">
   <p class="section-eyebrow">Vision</p>
   <div class="divider"></div>

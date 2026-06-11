@@ -32,15 +32,10 @@
   .hero-cta-outline:hover { background: var(--navy); color: var(--gold-pale); }
   .hero-visual { position: relative; z-index: 1; display: flex; justify-content: center; align-items: center; animation: fadeUp 0.8s 0.2s ease both; }
 
-  /* PHOTO FRAME */
   .photo-frame { position: relative; width: clamp(180px, 22vw, 280px); }
   .photo-frame::before { content: ''; position: absolute; top: -12px; left: -12px; right: 12px; bottom: 12px; border: 1.5px solid var(--gold); z-index: 0; }
   .photo-frame img { width: 100%; height: clamp(220px, 27vw, 340px); object-fit: cover; display: block; position: relative; z-index: 1; }
-  .photo-placeholder { width: 100%; height: clamp(220px, 27vw, 340px); background: var(--navy-soft); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; z-index: 1; gap: 0.5rem; cursor: pointer; }
-  .photo-placeholder span { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.5rem); color: var(--gold); font-weight: 300; }
-  .photo-placeholder p { font-size: 0.68rem; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; text-align: center; padding: 0 1rem; }
 
-  /* QUICK FACTS STRIP */
   .facts-strip { display: flex; background: var(--navy); padding: 1.5rem 5%; gap: 0; }
   .fact { flex: 1; text-align: center; padding: 0.5rem 1rem; border-right: 1px solid rgba(184,146,74,0.2); }
   .fact:last-child { border-right: none; }
@@ -67,18 +62,13 @@
     <p class="hero-title">Developer · Educator · Future AI Engineer</p>
     <p class="hero-bio">A hard-working individual passionate about building software and shaping the future through AI & ML. Currently developing web/desktop apps while teaching at DISS and studying CSE at Daffodil International University.</p>
     <div class="hero-ctas">
-      <a href="#" class="hero-cta">View Projects →</a>
-      <a href="#" class="hero-cta hero-cta-outline">Get in Touch</a>
+      <a href="projects.html" class="hero-cta">View Projects →</a>
+      <a href="contact.html" class="hero-cta hero-cta-outline">Get in Touch</a>
     </div>
   </div>
   <div class="hero-visual">
     <div class="photo-frame">
-      <!-- TO ADD YOUR PHOTO: upload your photo to GitHub, then replace the placeholder below with:
-           <img src="YOUR_PHOTO_FILENAME.jpg" alt="Istiyaq Ahmed Jihad"> -->
-      <div class="photo-placeholder">
-        <span>IAJ</span>
-        <p>Upload your photo to GitHub &amp; replace this</p>
-      </div>
+      <img src="https://raw.githubusercontent.com/istiyaq241/istiyaq241.github.io/main/Google%20Site/me1.jpg" alt="Istiyaq Ahmed Jihad">
     </div>
   </div>
 </section>

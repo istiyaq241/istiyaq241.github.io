@@ -26,7 +26,6 @@
   .achievements .section-title, .certificates .section-title { color: var(--navy); }
   .section-title em { font-style: italic; }
 
-  /* TIMELINE */
   .edu-timeline { position: relative; }
   .edu-timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 0; width: 1px; background: rgba(184,146,74,0.3); }
   .edu-item { padding: 0 0 2rem 2rem; position: relative; }
@@ -36,10 +35,12 @@
   .edu-institution { font-size: 0.85rem; color: rgba(255,255,255,0.55); }
   .edu-detail { font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-top: 0.2rem; }
 
-  /* ACHIEVEMENTS */
-  .achiev-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
-  .achiev-card { background: white; border: 1px solid rgba(184,146,74,0.2); padding: 1.2rem; transition: border-color 0.2s, transform 0.2s; }
+  /* ACHIEVEMENTS with photos */
+  .achiev-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+  .achiev-card { background: white; border: 1px solid rgba(184,146,74,0.2); overflow: hidden; transition: border-color 0.2s, transform 0.2s; }
   .achiev-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+  .achiev-img { width: 100%; height: 140px; object-fit: cover; display: block; }
+  .achiev-body { padding: 1rem; }
   .achiev-icon { font-size: 1.5rem; color: var(--gold); margin-bottom: 0.5rem; display: block; }
   .achiev-title { font-weight: 500; font-size: 0.85rem; color: var(--navy); margin-bottom: 0.2rem; }
   .achiev-sub { font-size: 0.75rem; color: var(--text-light); }
@@ -48,14 +49,12 @@
   .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; }
   .cert-card { border: 1px solid rgba(184,146,74,0.25); background: white; overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
   .cert-card:hover { transform: translateY(-3px); border-color: var(--gold); }
-  .cert-img { width: 100%; height: 130px; object-fit: cover; display: block; background: var(--navy-soft); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.4rem; }
-  .cert-img-placeholder { width: 100%; height: 130px; background: var(--navy-soft); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.4rem; }
-  .cert-img-placeholder span { font-size: 1.8rem; }
-  .cert-img-placeholder p { font-size: 0.62rem; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.08em; }
+  .cert-img { width: 100%; height: 130px; object-fit: cover; display: block; }
   .cert-body { padding: 0.9rem; }
   .cert-title { font-weight: 500; font-size: 0.85rem; color: var(--navy); margin-bottom: 0.2rem; }
   .cert-issuer { font-size: 0.75rem; color: var(--gold); }
-  .cert-date { font-size: 0.72rem; color: var(--text-light); margin-top: 0.2rem; }
+  .cert-link { display: inline-block; margin-top: 0.5rem; font-size: 0.72rem; color: var(--gold); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid rgba(184,146,74,0.3); }
+  .cert-link:hover { color: var(--navy); }
 
   @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
   .edu-timeline, .achiev-grid, .cert-grid { animation: fadeUp 0.5s ease both; }
@@ -64,7 +63,6 @@
 </head>
 <body>
 
-<!-- EDUCATION TIMELINE -->
 <section class="education">
   <p class="section-eyebrow">Academic Background</p>
   <div class="divider"></div>
@@ -91,41 +89,74 @@
   </div>
 </section>
 
-<!-- ACHIEVEMENTS -->
 <section class="achievements">
   <p class="section-eyebrow">Recognition</p>
   <div class="divider"></div>
   <h2 class="section-title">Awards &<br><em>Milestones</em></h2>
   <div class="achiev-grid">
-    <div class="achiev-card"><span class="achiev-icon">✦</span><p class="achiev-title">Top Scorer — Learn & Win Quiz</p><p class="achiev-sub">Spring 2024 · DIU</p></div>
-    <div class="achiev-card"><span class="achiev-icon">✦</span><p class="achiev-title">8th Place — DIU Growing Star Program</p><p class="achiev-sub">Spring 2024</p></div>
-    <div class="achiev-card"><span class="achiev-icon">✦</span><p class="achiev-title">1st Place — DIU Science Olympiad</p><p class="achiev-sub">Fall 2024</p></div>
-    <div class="achiev-card"><span class="achiev-icon">✦</span><p class="achiev-title">Finalist — Presentation Master 2025</p><p class="achiev-sub">Spring 2025</p></div>
+    <div class="achiev-card">
+      <div class="achiev-body"><span class="achiev-icon">✦</span><p class="achiev-title">Top Scorer — Learn & Win Quiz</p><p class="achiev-sub">Spring 2024 · DIU</p></div>
+    </div>
+    <div class="achiev-card">
+      <img src="https://raw.githubusercontent.com/istiyaq241/istiyaq241.github.io/main/Google%20Site/growing-star.jpg" alt="Growing Star Award" class="achiev-img">
+      <div class="achiev-body"><span class="achiev-icon">✦</span><p class="achiev-title">8th Place — DIU Growing Star Program</p><p class="achiev-sub">Spring 2024</p></div>
+    </div>
+    <div class="achiev-card">
+      <img src="https://raw.githubusercontent.com/istiyaq241/istiyaq241.github.io/main/Google%20Site/science-olympiad.jpg" alt="Science Olympiad 1st Place" class="achiev-img">
+      <div class="achiev-body"><span class="achiev-icon">✦</span><p class="achiev-title">1st Place — DIU Science Olympiad</p><p class="achiev-sub">Fall 2024</p></div>
+    </div>
+    <div class="achiev-card">
+      <div class="achiev-body"><span class="achiev-icon">✦</span><p class="achiev-title">Finalist — Presentation Master 2025</p><p class="achiev-sub">Spring 2025</p></div>
+    </div>
   </div>
 </section>
 
-<!-- CERTIFICATES -->
 <section class="certificates">
   <p class="section-eyebrow">Credentials</p>
   <div class="divider"></div>
   <h2 class="section-title">Certificates &<br><em>Credentials</em></h2>
   <div class="cert-grid">
     <div class="cert-card">
-      <!-- To add: replace cert-img-placeholder with <img src="cert1.jpg" class="cert-img" alt="Certificate"> -->
-      <div class="cert-img-placeholder"><span>🏅</span><p>Upload certificate image</p></div>
-      <div class="cert-body"><p class="cert-title">Add Certificate Name</p><p class="cert-issuer">Issuing Organization</p><p class="cert-date">Month Year</p></div>
+      <div class="cert-body">
+        <p class="cert-title">Employability Masterclass</p>
+        <p class="cert-issuer">Certificate of Completion</p>
+        <a href="https://raw.githubusercontent.com/istiyaq241/istiyaq241.github.io/main/Google%20Site/Employability%20Masterclass%2021-CERTIFICATE.pdf" class="cert-link" target="_blank">View Certificate →</a>
+      </div>
     </div>
     <div class="cert-card">
-      <div class="cert-img-placeholder"><span>🏅</span><p>Upload certificate image</p></div>
-      <div class="cert-body"><p class="cert-title">Add Certificate Name</p><p class="cert-issuer">Issuing Organization</p><p class="cert-date">Month Year</p></div>
+      <div class="cert-body">
+        <p class="cert-title">Become & Make A Leader — With Examples</p>
+        <p class="cert-issuer">Certificate of Completion</p>
+        <a href="https://raw.githubusercontent.com/istiyaq241/istiyaq241.github.io/main/Google%20Site/certificate_Become%20%26%20Make%20A%20Leader-%20With%20Examples.pdf" class="cert-link" target="_blank">View Certificate →</a>
+      </div>
     </div>
     <div class="cert-card">
-      <div class="cert-img-placeholder"><span>🏅</span><p>Upload certificate image</p></div>
-      <div class="cert-body"><p class="cert-title">Add Certificate Name</p><p class="cert-issuer">Issuing Organization</p><p class="cert-date">Month Year</p></div>
+      <div class="cert-body">
+        <p class="cert-title">Leadership Qualities — Boss VS Leader</p>
+        <p class="cert-issuer">Certificate of Completion</p>
+        <a href="https://raw.githubusercontent.com/istiyaq241/istiyaq241.github.io/main/Google%20Site/certificate_Leadership%20Qualities-%20Boos%20VS%20Leader%20.pdf" class="cert-link" target="_blank">View Certificate →</a>
+      </div>
     </div>
     <div class="cert-card">
-      <div class="cert-img-placeholder"><span>🏅</span><p>Upload certificate image</p></div>
-      <div class="cert-body"><p class="cert-title">Add Certificate Name</p><p class="cert-issuer">Issuing Organization</p><p class="cert-date">Month Year</p></div>
+      <div class="cert-body">
+        <p class="cert-title">Positivity — How To Build Positive Mentality</p>
+        <p class="cert-issuer">Certificate of Completion</p>
+        <a href="https://raw.githubusercontent.com/istiyaq241/istiyaq241.github.io/main/Google%20Site/certificate_Positivity-How%20To%20Build%20Posiitive%20Mentality.pdf" class="cert-link" target="_blank">View Certificate →</a>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-body">
+        <p class="cert-title">Setting and Achieving Focus, Goals and Targets</p>
+        <p class="cert-issuer">Certificate of Completion</p>
+        <a href="https://raw.githubusercontent.com/istiyaq241/istiyaq241.github.io/main/Google%20Site/certificate_Setting%20and%20Achieving%20Focus%2C%20Goals%20and%20Targets.pdf" class="cert-link" target="_blank">View Certificate →</a>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-body">
+        <p class="cert-title">Soft Skill and Hard Skill</p>
+        <p class="cert-issuer">Certificate of Completion</p>
+        <a href="https://raw.githubusercontent.com/istiyaq241/istiyaq241.github.io/main/Google%20Site/certificate_Soft%20Skill%20and%20Hard%20Skill.pdf" class="cert-link" target="_blank">View Certificate →</a>
+      </div>
     </div>
   </div>
 </section>

@@ -22,19 +22,16 @@
   .section-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 300; color: var(--navy); line-height: 1.1; margin-bottom: 2rem; }
   .section-title em { font-style: italic; }
 
-  /* PROJECT CARD */
   .project-card { background: white; border: 1px solid rgba(14,26,43,0.1); margin-bottom: 2rem; position: relative; overflow: hidden; transition: border-color 0.25s, transform 0.25s; }
   .project-card:hover { transform: translateY(-3px); border-color: rgba(184,146,74,0.4); }
   .project-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
   .project-card:hover::after { transform: scaleX(1); }
 
-  /* PROJECT MEDIA STRIP */
-  .project-media { display: grid; grid-template-columns: repeat(3, 1fr); height: 140px; }
-  .media-slot { background: var(--navy-soft); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.3rem; border-right: 1px solid rgba(255,255,255,0.05); overflow: hidden; }
+  .project-media { display: grid; grid-template-columns: repeat(3, 1fr); height: 160px; }
+  .media-slot { overflow: hidden; border-right: 1px solid rgba(255,255,255,0.05); }
   .media-slot:last-child { border-right: none; }
-  .media-slot img { width: 100%; height: 100%; object-fit: cover; }
-  .media-slot-icon { font-size: 1.4rem; }
-  .media-slot-label { font-size: 0.58rem; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.08em; }
+  .media-slot img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+  .media-slot img:hover { transform: scale(1.05); }
 
   .project-body { padding: 1.5rem; }
   .project-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 0.7rem; flex-wrap: wrap; }
@@ -52,14 +49,12 @@
   .project-link { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,146,74,0.3); padding-bottom: 1px; transition: color 0.2s; }
   .project-link:hover { color: var(--navy); }
 
-  .todo-note { background: rgba(184,146,74,0.08); border: 1px dashed rgba(184,146,74,0.4); padding: 0.8rem 1.2rem; font-size: 0.8rem; color: var(--text-light); font-style: italic; margin-top: 0.5rem; border-radius: 2px; }
-
   @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
   .project-card { animation: fadeUp 0.5s ease both; }
   .project-card:nth-child(2) { animation-delay: 0.1s; }
   .project-card:nth-child(3) { animation-delay: 0.2s; }
 
-  @media (max-width: 600px) { section { padding: 2rem 4%; } .project-media { grid-template-columns: 1fr 1fr; height: 110px; } .project-media .media-slot:last-child { display: none; } }
+  @media (max-width: 600px) { section { padding: 2rem 4%; } .project-media { height: 120px; } }
 </style>
 </head>
 <body>
@@ -72,14 +67,13 @@
   <div class="project-card">
     <div class="project-media">
       <div class="media-slot">
-        <!-- Replace with: <img src="mediaid-1.jpg" alt="MediAid screenshot"> -->
-        <span class="media-slot-icon">📸</span><span class="media-slot-label">Add screenshot</span>
+        <img src="https://raw.githubusercontent.com/istiyaq241/istiyaq241.github.io/main/Google%20Site/MediAid_1.jpg" alt="MediAid screenshot 1">
       </div>
       <div class="media-slot">
-        <span class="media-slot-icon">📸</span><span class="media-slot-label">Add screenshot</span>
+        <img src="https://raw.githubusercontent.com/istiyaq241/istiyaq241.github.io/main/Google%20Site/MediAid_2.jpg" alt="MediAid screenshot 2">
       </div>
       <div class="media-slot">
-        <span class="media-slot-icon">🎬</span><span class="media-slot-label">Add demo video</span>
+        <img src="https://raw.githubusercontent.com/istiyaq241/istiyaq241.github.io/main/Google%20Site/MediAid3.jpg" alt="MediAid screenshot 3">
       </div>
     </div>
     <div class="project-body">
@@ -107,13 +101,13 @@
   <div class="project-card">
     <div class="project-media">
       <div class="media-slot">
-        <span class="media-slot-icon">📸</span><span class="media-slot-label">Add screenshot</span>
+        <img src="https://raw.githubusercontent.com/istiyaq241/istiyaq241.github.io/main/Google%20Site/DATS1.jpg" alt="DATS screenshot 1">
       </div>
       <div class="media-slot">
-        <span class="media-slot-icon">📸</span><span class="media-slot-label">Add screenshot</span>
+        <img src="https://raw.githubusercontent.com/istiyaq241/istiyaq241.github.io/main/Google%20Site/DATS2.jpg" alt="DATS screenshot 2">
       </div>
       <div class="media-slot">
-        <span class="media-slot-icon">🎬</span><span class="media-slot-label">Add demo video</span>
+        <img src="https://raw.githubusercontent.com/istiyaq241/istiyaq241.github.io/main/Google%20Site/DATS3.jpg" alt="DATS screenshot 3">
       </div>
     </div>
     <div class="project-body">
@@ -141,13 +135,13 @@
   <div class="project-card">
     <div class="project-media">
       <div class="media-slot">
-        <span class="media-slot-icon">📸</span><span class="media-slot-label">Add screenshot</span>
+        <img src="https://raw.githubusercontent.com/istiyaq241/istiyaq241.github.io/main/Google%20Site/DISS-Sync1.jpg" alt="DISS-Sync screenshot 1">
       </div>
       <div class="media-slot">
-        <span class="media-slot-icon">📸</span><span class="media-slot-label">Add screenshot</span>
+        <img src="https://raw.githubusercontent.com/istiyaq241/istiyaq241.github.io/main/Google%20Site/DISS-Sync2.jpg" alt="DISS-Sync screenshot 2">
       </div>
       <div class="media-slot">
-        <span class="media-slot-icon">🎬</span><span class="media-slot-label">Add demo video</span>
+        <img src="https://raw.githubusercontent.com/istiyaq241/istiyaq241.github.io/main/Google%20Site/DISS-Sync3.jpg" alt="DISS-Sync screenshot 3">
       </div>
     </div>
     <div class="project-body">
@@ -168,7 +162,6 @@
         </div>
       </div>
       <a href="https://github.com/istiyaq241/DISS-Sync" class="project-link" target="_blank">View on GitHub →</a>
-      <div class="todo-note">📌 Screenshots and demo videos coming soon — replace the placeholder slots above with your actual images.</div>
     </div>
   </div>
 
